@@ -12,6 +12,16 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
+    // The displayname cannot be null, must contain letters or numbers, and must be at least 3 characters long.
+    displayName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isAlphanumeric: true,
+        len: [3]
+      }
+    },
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
