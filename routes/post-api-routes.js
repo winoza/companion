@@ -8,7 +8,7 @@ module.exports = function(app) {
   app.get("/api/posts", function(req, res) {
     var query = {};
     if (req.query.user_id) {
-      query.AuthorId = req.query.user_id;
+      query.UuthorId = req.query.user_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
@@ -30,7 +30,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Author]
+      include: [db.User]
     }).then(function(dbPost) {
       res.json(dbPost);
     });
