@@ -4,4 +4,20 @@ $(document).ready(() => {
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.email);
   });
+
+  $.get("/api/image", function (data) {
+  console.log(data)
+  if (data.length !== 0) {
+    for (var i = 0; i < data.length; i++) {
+      var row = $("<div>");
+      row.addClass("images");
+
+      row.append("<p>" + data[i].name + "</p>");
+      row.append("<p>" + data[i].data + "</p>");
+      
+
+      $("#image-area").prepend(row);
+    }
+  }
+});
 });
