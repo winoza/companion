@@ -30,13 +30,16 @@ $(function (){
         };
     
         // Send the POST request.
-        $.ajax("/api/posts", {
+        $.when($.ajax("/api/posts", {
           type: "POST",
           data: newPost
-        })
+        }), $.ajax("/upload", {
+            type: "POST",
+            data: file
+          }))
             .then(function() {
                 console.log(newPost);
-                // Reload the page to get the updated list
+                // Redirect to member page.
                 // window.location.href = "/members";
                 location.reload();
           }
