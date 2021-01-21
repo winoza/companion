@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
+<<<<<<< HEAD
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.16.1",
@@ -24,6 +25,18 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.22.3"
+=======
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.16.1",
+    "multer": "^1.4.2",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6",
+    "sharp": "^0.27.0"
+>>>>>>> 716516c2c2cf9b2a445cf70346176fa7ec869aa8
   },
   "devDependencies": {
     "chai": "^4.1.2",

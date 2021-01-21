@@ -27,5 +27,11 @@ module.exports = function(app) {
     res.render("members");
   });
 
+<<<<<<< HEAD
   //app.post("/upload", upload.single("file"), uploadController.uploadFiles);
+=======
+  app.get("/post", isAuthenticated, (req, res) => {
+    res.render("post");
+  });
+>>>>>>> 716516c2c2cf9b2a445cf70346176fa7ec869aa8
 };

@@ -4,27 +4,27 @@ const Post = sequelize.define("Post", {
         type: DataTypes.STRING,
         allowNull: false,
         len: [1],
-        validate: {
-            isSupportedFile (value) {
-                const split = value.split('.')
-                if(split[1] !== "jpg" || 'png'){
-                    throw new Error('Only .jpg or .png files are allowed')
-                }
-            }
-        }
+        // validate: {
+        //     isSupportedFile (value) {
+        //         const split = value.split('.')
+        //         if(split[1] !== "jpg" || 'png'){
+        //             throw new Error('Only .jpg or .png files are allowed')
+        //         }
+        //     }
+        // }
       },
     thumbnail: {
         type: DataTypes.STRING,
         allowNull: false,
         len: [1],
-        validate: {
-            isSupportedFile (value) {
-                const split = value.split('.')
-                if(split[1] !== "jpg" || 'png'){
-                    throw new Error('Only .jpg or .png files are allowed')
-                }
-            }
-        }
+        // validate: {
+        //     isSupportedFile (value) {
+        //         const split = value.split('.')
+        //         if(split[1] !== "jpg" || 'png'){
+        //             throw new Error('Only .jpg or .png files are allowed')
+        //         }
+        //     }
+        // }
       },
     caption: {
         type: DataTypes.TEXT,
