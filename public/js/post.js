@@ -38,6 +38,7 @@ $(function (){
             data: file
           }))
             .then(function() {
+
                 console.log(newPost);
                 // Redirect to member page.
                 // window.location.href = "/members";
