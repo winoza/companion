@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
+    Image.hasMany(models.Comment, {
+      onDelete: "cascade"
+    })
   };
   return Image;
 };

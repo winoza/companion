@@ -1,8 +1,8 @@
 $(document).ready(() => {
   // Getting references to our form and inputs
-  const loginForm = $("form.login");
-  const emailInput = $("input#email-input");
-  const passwordInput = $("input#password-input");
+  const loginForm = $("form.form--login");
+  const emailInput = $("input#userEmail");
+  const passwordInput = $("input#password");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", event => {
@@ -28,8 +28,10 @@ $(document).ready(() => {
       email: email,
       password: password
     })
-      .then(() => {
-        window.location.replace("/members");
+      .then((req) => {
+        console.log(req)
+        const id = req.id
+        window.location.replace(`/members/${id}`);
         // If there's an error, log the error
       })
       .catch(err => {

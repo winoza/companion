@@ -41,6 +41,9 @@ const Post = sequelize.define("Post", {
         allowNull: false
       }
     });
+    Post.hasMany(models.Comment, {
+      onDelete: "cascade"
+    })
   };
   return Post
 }

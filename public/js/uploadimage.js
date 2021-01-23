@@ -25,7 +25,7 @@ const uploadFiles = async (req, res) => {
       );
 
       //return res.send(`File has been uploaded.`);
-      res.redirect("/members");
+      res.redirect("/members/:id");
     });
   } catch (error) {
     console.log(error);
