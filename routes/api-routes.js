@@ -1,8 +1,8 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const uploadimagedb = require("../public/js/uploadimage");
-const uploadimagemulter = require("../config/middleware/uploadimage");
+const uploadimagedb = require("../config/middleware/uploadimage");
+const uploadimagemulter = require("../config/middleware/imageware");
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.

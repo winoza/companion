@@ -32,15 +32,22 @@ module.exports = function(app) {
     db.User.findOne({
       where: req.user.id,
       include: [{
-        model: db.image,
+        model: db.Image,
       include: [{
         model: db.Comment
       }]
       }]
       })
       .then(function(user){
-        user.password = ""
-        user._previousDataValues.password = ""
+      
+
+        var object = {
+          user: {
+            userId: user.id,
+            username: user.displayName,
+            posts: user.Images
+          }
+        }
         // const dbUser = []
         // dbUser.push(user)
         // const resObj = dbUser.map(user => {
@@ -73,8 +80,8 @@ module.exports = function(app) {
         // 
         
         // console.log(resObj)
-        console.log(user)
-        res.render("members", user);
+        console.log(object)
+        res.render("members", object);
       })
   })
   

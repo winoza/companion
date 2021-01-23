@@ -1,21 +1,34 @@
-const multer = require("multer");
+const fs = require("fs");
 
-const imageFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith("image")) {
-    cb(null, true);
-  } else {
-    cb("Please upload only images.", false);
+const db = require("../../models");
+const Image = db.Image;
+
+const uploadFiles = async (req, res) => {
+  console.log(req.file);
+
+  try {
+
+    if (req.file == undefined) {
+      return res.send(`You must select a file.`);
+    }
+
+    Image.create({
+      caption: req.body.caption,
+      name:  `/uploads/${req.file.filename}`,
+      UserId: req.user.id
+      
+    }).then((image) => {
+      console.log(image)
+
+      //return res.send(`File has been uploaded.`);
+      res.redirect("/members/:id");
+    });
+  } catch (error) {
+    console.log(error);
+    return res.send(`Error when trying upload images: ${error}`);
   }
 };
 
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, __basedir + "/public/uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-bezkoder-${file.originalname}`);
-  },
-});
-
-var uploadFile = multer({ storage: storage, fileFilter: imageFilter });
-module.exports = uploadFile;
+module.exports = {
+  uploadFiles,
+};
