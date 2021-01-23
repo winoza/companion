@@ -32,8 +32,9 @@ $(document).ready(() => {
       displayName: username,
       password: password
     })
-      .then(() => {
-        window.location.replace("/members");
+      .then((req) => {
+        const id = req.id
+        window.location.replace(`/members/${id}`)
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

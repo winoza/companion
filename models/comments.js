@@ -1,10 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
     const Comment = sequelize.define("Comment", {
-        text: {
+        content: {
             type: DataTypes.TEXT,
             allowNull: false,
-            len: [1, 2200]
-          }
+            len: [2, 2200]
+        },
+        commenter: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        }
       });
     
       Comment.associate = function(models) {
