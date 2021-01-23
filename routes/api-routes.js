@@ -33,11 +33,6 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  // app.get("/api/image", function (req, res) {
-  //   db.Image.findAll({}).then(function (dbPost) {
-  //   res.json(dbPost).catch((err) => res.status(422).json(err));
-  //   });
-  // });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
