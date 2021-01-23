@@ -1,23 +1,52 @@
-/*
 
-form.signup,
+
+/* form.signup,
 form.login {
   margin-top: 50px;
-}
+} */
 
-.nav-bar {
-  height: 70px;
-}
 
-body {background-color:rgb(238, 238, 238);}
+
+/* body {background-color:rgb(238, 238, 238);}
 .container-fluid {padding:50px;}
 .container{background-color:white;padding:50px;   }
 #title{font-family: 'Lobster', cursive;}
 body {background-color:#eee;}
 .container-fluid {padding:50px;}
 
-#title{font-family: 'Lobster', cursive;;}
+#title{font-family: 'Lobster', cursive;;} */
 
+.nav-bar {
+  height: 70px;
+}
+
+/* Comment area styling */
+.comment-text {
+  width: 100%;
+  background-color:#eee;
+  resize: none;
+  padding: 1%;
+}
+
+.add-comment {
+  width: 21%;
+  font-size: .75em;
+  margin-bottom: 1%;
+  float: right;
+}
+
+.comment {
+  padding: 0 2% 0 2%;
+  background-color: rgba(189, 188, 188, 0.336);
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+
+}
+
+.commenter {
+  font-weight: bold;
+  font-size: 1em;
+}
 
 /*container*/
 
