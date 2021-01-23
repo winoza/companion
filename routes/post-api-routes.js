@@ -21,6 +21,7 @@ module.exports = function(app) {
     });
   });
 
+  
   // Get route for retrieving a single post
   app.get("/api/posts/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
@@ -42,6 +43,8 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+
+
 
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function(req, res) {

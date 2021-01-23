@@ -21,6 +21,7 @@ module.exports = function (app){
         .jpeg({quality : 80}).toFile(__dirname  
             + '/img/posts/avatar_preview.jpg'); 
     
-        return res.json("File Uploaded Successfully!"); 
+        //return res.json("File Uploaded Successfully!"); 
+        res.redirect("/members");
     }); 
 }

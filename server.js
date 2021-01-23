@@ -4,9 +4,11 @@ const session = require("express-session");
 var bodyparser = require('body-parser'); 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+// Defines global variable for basedir
+global.__basedir = __dirname;
 
 // Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8181;
 const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication

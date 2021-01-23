@@ -1,6 +1,8 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const uploadimagedb = require("../public/js/uploadimage");
+const uploadimagemulter = require("../config/middleware/uploadimage");
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -27,11 +29,15 @@ module.exports = function (app) {
     });
   });
 
+  // POST route for saving a new image
+  app.post("/upload", uploadimagemulter.single("file"), uploadimagedb.uploadFiles);
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
+
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {

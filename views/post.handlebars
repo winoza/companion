@@ -1,18 +1,27 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <form id="cms">
+          <form
+            class="mt-4"
+            action="/upload"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <div class="form-group">
-                <label for="photo">Photo:</label>
-                <input placeholder="Select an image" type="file" class="form-control" id="post-image">
-                <br />
-                <label for="body">Caption:</label>
-                <textarea placeholder="Write a caption for your image!" class="form-control" rows="10" id="caption"></textarea>
-                
-                
-                <br />
-                <button type="submit" class="btn btn-success submit" id="add-btn">Submit</button>
+              <input
+                type="file"
+                name="file"
+                id="input-files"
+                class="form-control-file border"
+              />
+              <input
+                type="text"
+                name="caption"
+                id="caption"
+                class="form-control-file border"
+              />
             </div>
-        </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
     </div>
 </div>
 

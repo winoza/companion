@@ -32,7 +32,7 @@ module.exports = function(app) {
     db.User.findOne({
       where: req.user.id,
       include: [{
-        model: db.Post,
+        model: db.image,
       include: [{
         model: db.Comment
       }]
@@ -79,6 +79,7 @@ module.exports = function(app) {
   })
   
 
+  //app.post("/upload", upload.single("file"), uploadController.uploadFiles);
   app.get("/post", isAuthenticated, (req, res) => {
     res.render("post");
   });
