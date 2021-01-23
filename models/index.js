@@ -33,6 +33,6 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.images = require("./image.model.js")(sequelize, Sequelize);
+db.images = require("./image.js")(sequelize, Sequelize);
 
 module.exports = db;

@@ -12,18 +12,20 @@ const uploadFiles = async (req, res) => {
     }
 
     Image.create({
-      type: req.file.mimetype,
+      caption: req.body.caption,
       name: req.file.originalname,
+      UserId: req.user.id,
       data: fs.readFileSync(
-        __basedir + "/assets/uploads/" + req.file.filename
+        __basedir + "/public/uploads/" + req.file.filename // asset upload
       ),
     }).then((image) => {
       fs.writeFileSync(
-        __basedir + "/assets/tmp/" + image.name,
+        __basedir + "/public/img/" + image.name, // asset tmp
         image.data
       );
 
-      return res.send(`File has been uploaded.`);
+      //return res.send(`File has been uploaded.`);
+      res.redirect("/members");
     });
   } catch (error) {
     console.log(error);
