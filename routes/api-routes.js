@@ -19,7 +19,12 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     console.log(req.body)
-    db.User.create(req.body).then((result) => res.json(result))
+    db.User.create(req.body).then(() => {
+      res.redirect(307, "/api/login");
+    })
+    .catch(err => {
+      res.status(401).json(err);
+    });
   });
 
   // Route for logging user out
