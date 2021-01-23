@@ -41,7 +41,7 @@
       <!-- Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <h4 class="w3-center">{{dataValues.displayName}}</h4>
+         <h4 class="w3-center">{{user.username}}</h4>
          <p class="w3-center"><img src="../img/catface.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Cat</p>
@@ -57,7 +57,7 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
         
-        {{#each images}}
+        {{#each Image}}
       
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="../img/catface2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
@@ -67,7 +67,7 @@
         
           <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half">
-              <img src="../img/{{dataValues.name}}" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+              <img src="/{{dataValues.name}}" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
             </div>
             <div class="w3-half">
               <img src="../img/catwithfish2.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
