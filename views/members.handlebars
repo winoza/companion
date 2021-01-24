@@ -57,7 +57,7 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
         
-        {{#each Image}}
+        {{#each user.posts}}
       
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="../img/catface2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
@@ -66,19 +66,14 @@
         <hr class="w3-clear">
         
           <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-half">
-              <img src="/{{dataValues.name}}" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
-            </div>
-            <div class="w3-half">
-              <img src="../img/catwithfish2.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
-          </div>
+              <img src="../{{dataValues.name}}" style="width:100%" class="w3-margin-bottom">
         </div>
         <p>{{dataValues.caption}}</p>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom comment-btn" data-id="{{dataValues.id}}"><i class="fa fa-comment"></i>  Comment</button> 
         <br>
         <h5>Comments:</h5>
-        {{#each Comments}}
+        {{#each dataValues.Comments}}
         <div class="w3-row-padding comment" data-id="{{dataValues.id}}" style="margin:0 -15px">
             <h5 class="commenter">{{dataValues.commenter}}</h5>
             <p class="comments">{{dataValues.content}}</p>
@@ -98,25 +93,12 @@
       </div>
         {{/each}}
         
-     
-
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="../img/dogface.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 min</span>
-        <h4>Sadie</h4><br>
-        <hr class="w3-clear">
-        <p>Have you seen this?</p>
-        <img src="../img/dogwithtoy.jpg" style="width:100%" class="w3-margin-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-      </div> 
       
     <!-- End Middle Column -->
     </div>
     
     <!-- Right Column -->
-    <div class="w3-col m2">
+    {{!-- <div class="w3-col m2">
   
       
       <div class="w3-card w3-round w3-white w3-center">
@@ -124,21 +106,14 @@
           <p>Friend Request</p>
           <img src="../img/frenchie.png" alt="Avatar" style="width:50%"><br>
           <span>French Fry</span>
-          <div class="w3-row w3-opacity">
-            <div class="w3-half">
-              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
-            </div>
-            <div class="w3-half">
-              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
-            </div>
-          </div>
+          
         </div>
       </div>
       <br>
       
       
     <!-- End Right Column -->
-    </div>
+    </div> --}}
     
   <!-- End Grid -->
   </div>
