@@ -35,6 +35,8 @@ module.exports = function(app) {
         model: db.Image,
       include: [{
         model: db.Comment
+      },{
+        model: db.Like
       }]
       }]
       })

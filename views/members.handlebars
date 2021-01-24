@@ -69,7 +69,8 @@
               <img src="../{{dataValues.name}}" style="width:100%" class="w3-margin-bottom">
         </div>
         <p>{{dataValues.caption}}</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <p><i class="fa fa-paw"></i> &nbsp; {{dataValues.Likes.length}}</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom like-btn" data-id="{{dataValues.id}}" data-like="false"><i class="fa fa-thumbs-up"></i>  Like</button> 
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom comment-btn" data-id="{{dataValues.id}}"><i class="fa fa-comment"></i>  Comment</button> 
         <br>
         <h5>Comments:</h5>
@@ -157,3 +158,4 @@ function openNav() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/members.js"></script>
 <script type="text/javascript" src="../js/comment.js"></script>
+<script type="text/javascript" src="../js/like.js"></script>
