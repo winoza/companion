@@ -5,22 +5,32 @@
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large nav-bar">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
 
-  <a class="navbar-brand" href="#"><img src="../img/CompanionsLogoFinal.png"  alt="logo" height="40px" class="responsive"></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Add"><img src="../img/addButtonIcon.png"  alt="logo" height="40px" class="responsive"></a></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Search"><img src="../img/searchButtonIcon.png"  alt="logo" height="40px" class="responsive"></i></a>
+  <a class="navbar-brand" href="#" id="logo"><img src="../img/CompanionsLogoFinal.png"  alt="logo" height="40px" class="responsive"></a>
+  <a href="/post" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Add"><img src="../img/addButtonIcon.png"  alt="logo" height="40px" class="responsive"></a>
+    <div class="w3-dropdown-hover w3-hide-small">
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Search"><img src="../img/searchButtonIcon.png"  alt="Search" height="40px" class="responsive"></a>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" id="searchBox" style="width:300px">
+      <label class="search__label" for="search">Search for a buddy! Enter their username:</label>
+      <input type="text" name="search" id="search" placeholder="Enter username" class="form__input" />
+      
+      <button type="submit" class="form__button" id="search-btn">Search</button>
+      
+    </div>
+  </div>
   
-  <div class="w3-dropdown-hover w3-hide-small">
+  
+  {{!-- <div class="w3-dropdown-hover w3-hide-small">
       
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#" class="w3-bar-item w3-button">One new friend request</a>
       <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
       <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
     </div>
-  </div>
+  </div> --}}
   <div class="w3-dropdown-hover w3-hide-small w3-right">
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" id="profile" title="My Account">
     <img src="../img/catface.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px; right: 0; margin-top: 3%">
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px; right: 0; margin-top: 50px">
       <a href="/logout" class="w3-bar-item w3-button">Logout</a>
     </div>
   </a>
@@ -56,14 +66,13 @@
     </div>
     
     <!-- Middle Column -->
-    <div class="w3-col m7">
+    <div class="w3-col m9">
         
         {{#each user.posts}}
       
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <img src="../img/catface2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">{{dataValues.createdAt}}</span>
-        <h4>Georgia</h4><br>
+        <br>
         <hr class="w3-clear">
         
           <div class="w3-row-padding" style="margin:0 -16px">
@@ -155,8 +164,7 @@ function openNav() {
 }
 </script>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/members.js"></script>
 <script type="text/javascript" src="../js/comment.js"></script>
 <script type="text/javascript" src="../js/like.js"></script>
+

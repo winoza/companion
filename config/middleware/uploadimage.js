@@ -5,7 +5,7 @@ const Image = db.Image;
 
 const uploadFiles = async (req, res) => {
   console.log(req.file);
-
+  const user_Id = req.user.id
   try {
 
     if (req.file == undefined) {
@@ -21,7 +21,7 @@ const uploadFiles = async (req, res) => {
       console.log(image)
 
       //return res.send(`File has been uploaded.`);
-      res.redirect("/members/:id");
+      res.redirect("/members/" + user_Id);
     });
   } catch (error) {
     console.log(error);

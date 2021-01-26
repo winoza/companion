@@ -1,4 +1,7 @@
 const user = []
+const logo = $('#logo')
+const profile = $('#profile')
+const myPage = $('#my-page')
 const commentBtn = $('.comment-btn')
 const commentBox = $('.comment-box')
 const addComment = $('.add-comment')
@@ -15,6 +18,9 @@ $(document).ready(() => {
             userId: userId
         }
         user.push(userObj)
+        logo.attr("href", `/members/${userId}`)
+        profile.attr("href", `/members/${userId}`)
+        myPage.attr("href", `/members/${userId}`)
       });
   });
 
