@@ -54,4 +54,50 @@ module.exports = function (app) {
       });
     }
   });
+
+  // Route for getting data on all members
+  app.get("/api/members", (req, res) => {
+    
+    db.User.findAll({})
+    .then(function(data) {
+     
+      const userData =  data.map(data => {
+      return Object.assign({}, {
+        displayName: data.displayName,
+        id: data.id
+     })
+     })
+     
+      console.log(userData)
+      res.json(userData);
+    });
+  })
+
+  app.get("/api/members/:id", (req, res) => {
+    
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [{
+        model: db.Image,
+      include: [{
+        model: db.Comment
+      },{
+        model: db.Like
+      }]
+      }]
+      })
+      .then(function(user){
+      
+        var object = {
+          user: {
+            userId: user.id,
+            username: user.displayName,
+            posts: user.Images
+          }
+        }
+        res.json(object);
+      })
+    })
 };

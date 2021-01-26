@@ -1,5 +1,6 @@
 const userInfo = []
 const button = $('.like-btn')
+const myLikedPosts = []
 
 $(document).ready(() => {
     // This file just does a GET request to figure out which user is logged in
@@ -12,10 +13,47 @@ $(document).ready(() => {
             userId: userIdInfo
         }
         userInfo.push(infoObj)
-      });
-  });
+    });
+    // gets all likes associated with user and checks to see if posts are on the current page
+    // for posts that have been liked, sets data-liked attribute to true
+    $.get("/api/likes").then(item => {
+        console.log(item)
+        pagePosts = []
+        for(y = 0; y < button.length; y ++){
+            var btnIndex = $(button[y])
+            var dataId = btnIndex.attr('data-id')
+            pagePosts.push(dataId)
+        }
+        console.log(pagePosts)
+        for( i = 0; i < item.length; i ++){
+            var check = pagePosts.includes(`${item[i].ImageId}`)
+                console.log(check)
+                if(check !== false){
+                    myLikedPosts.push(item[i].ImageId)
+                
+            }
+            
+        }
+        console.log(myLikedPosts)
+        for(x = 0; x < button.length; x++){
+            var indexbtn = $(button[x])
+            var buttonId = indexbtn.attr('data-id')
+            var btnCheck = myLikedPosts.includes(parseInt(buttonId))
+            console.log(buttonId)
+            console.log(btnCheck)
+            if(btnCheck === false){
+                indexbtn.attr('data-like', false)
+            } else {
+                indexbtn.attr('data-like', true)
+            }
 
-  $(function(){
+        }
+    });
+      
+});
+
+$(function(){
+
 
         button.on('click', function(event){
             event.preventDefault();
@@ -43,30 +81,30 @@ $(document).ready(() => {
                             data: liked
                         })
                         .then(function(){
+                            location.reload()
                             return
                         })
 
                     }
                     else if(likeStatus === "true") {
                         likeBtn.attr('data-like', 'false')
-                        
-                        
-                        $.get("/api/likes").then(data => {
-                            if (data.UserId === userInfo[0].userId && data.PostId === likePostId){
-                            const thisId = data.id
+                
                             $.ajax({
                                 method: "DELETE",
-                                url: "/api/likes/" + thisId
-                            }).then(function(){
-                                
-                            })
+                                url: "/api/likes/" + likePostId
+                                }).then(function(){
+                                    location.reload()
+                                    return
+                                })
                             }
-                            return
-                        })
-                    }
+                            
+                            
                 }
-    
-
             }
-  })
-  })
+                            
+        })
+                    
+    
+})
+  
+

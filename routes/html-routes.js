@@ -28,9 +28,11 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members/:id", isAuthenticated, (req, res) => {
-
+    
     db.User.findOne({
-      where: req.user.id,
+      where: {
+        id: req.params.id
+      },
       include: [{
         model: db.Image,
       include: [{
@@ -42,7 +44,6 @@ module.exports = function(app) {
       })
       .then(function(user){
       
-
         var object = {
           user: {
             userId: user.id,
@@ -50,40 +51,6 @@ module.exports = function(app) {
             posts: user.Images
           }
         }
-        // const dbUser = []
-        // dbUser.push(user)
-        // const resObj = dbUser.map(user => {
-        //   return Object.assign({},
-        //     {
-        //       userId: user.id,
-        //       uername: user.displayName,
-        //       posts: user.Posts.map(post => {
-
-        //         return Object.assign({},
-        //           {
-        //             postId: post.id,
-        //             userId: post.UserId,
-        //             createdAt: post.createdAt,
-        //             caption: post.caption,
-        //             comments: post.Comments.map(comment => {
-
-        //               return Object.assign({},
-        //                 {
-        //                   commentId: comment.id,
-        //                   postId: comment.PostId,
-        //                   // commenter: comment.commenter_username,
-        //                   content: comment.content
-        //                 })
-        //             })
-        //           })
-        //       })
-        //     })
-        // })
-        // 
-        
-        // console.log(resObj)
-        console.log(object)
-        console.log(object.user.posts[0])
         res.render("members", object);
       })
   })
@@ -93,4 +60,12 @@ module.exports = function(app) {
   app.get("/post", isAuthenticated, (req, res) => {
     res.render("post");
   });
+
+  app.get("/notfound", isAuthenticated, (req, res) => {
+    var userPage = {
+      user_Id: req.user.id
+    }
+    console.log(userPage)
+    res.render("notfound", userPage);
+  });  
 };

@@ -1,27 +1,19 @@
-
-
-/* form.signup,
-form.login {
-  margin-top: 50px;
-} */
-
-
-
-/* body {background-color:rgb(238, 238, 238);}
-.container-fluid {padding:50px;}
-.container{background-color:white;padding:50px;   }
-#title{font-family: 'Lobster', cursive;}
-body {background-color:#eee;}
-.container-fluid {padding:50px;}
-
-#title{font-family: 'Lobster', cursive;;} */
-
+/* Nav bar styling */
 .nav-bar {
-  height: 70px;
+  height: 60px;
 }
 
-.wrap {
-  display: flex;
+#searchBox {
+  margin-top: 60px;
+}
+
+/* not found styling */
+#notfound {
+  font-family: "Lato", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #29166d;
+  text-align: center;
 }
 
 /* Comment area styling */
@@ -285,4 +277,12 @@ body {
 .form__link {
   color: #2E8E79;
   cursor: pointer;
+}
+.search__label {
+  bottom: 10px;
+  left: 0;
+  color: black;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  transition: 0.3s;
 }

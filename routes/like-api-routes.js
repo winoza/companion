@@ -6,16 +6,19 @@ module.exports = function(app) {
 
   // GET route for getting all of the likes
   app.get("/api/likes", function(req, res) {
-    var query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
-    }
+    
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
+    // In this case, just db.Usesr and db.Image
     db.Like.findAll({
-      where: query,
-      include: ([db.User],[db.Image])
+      where: {
+          UserId: req.user.id
+        },
+      include: [{
+        model: db.Image
+      },{
+        model: db.User
+      }]
     }).then(function(dbLike) {
       res.json(dbLike);
     });
@@ -30,7 +33,11 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: ([db.User],[db.Image])
+      include: [{
+        model: db.Image
+      },{
+        model: db.User
+      }]
     }).then(function(dbLike) {
       res.json(dbLike);
     });
@@ -44,10 +51,11 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting likes
-  app.delete("/api/likes/:id", function(req, res) {
+  app.delete("/api/likes/:postid", function(req, res) {
     db.Like.destroy({
       where: {
-        id: req.params.id
+        UserId: req.user.id,
+        ImageId: req.params.postid
       }
     }).then(function(dbLike) {
       res.json(dbLike);
