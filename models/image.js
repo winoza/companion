@@ -21,6 +21,9 @@ module.exports = function(sequelize, DataTypes) {
     Image.hasMany(models.Comment, {
       onDelete: "cascade"
     })
+    Image.hasMany(models.Like, {
+      onDelete: "cascade"
+    })
   };
   return Image;
 };

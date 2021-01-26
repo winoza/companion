@@ -35,6 +35,8 @@ module.exports = function(app) {
         model: db.Image,
       include: [{
         model: db.Comment
+      },{
+        model: db.Like
       }]
       }]
       })
@@ -81,6 +83,7 @@ module.exports = function(app) {
         
         // console.log(resObj)
         console.log(object)
+        console.log(object.user.posts[0])
         res.render("members", object);
       })
   })

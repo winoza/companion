@@ -20,6 +20,10 @@ body {background-color:#eee;}
   height: 70px;
 }
 
+.wrap {
+  display: flex;
+}
+
 /* Comment area styling */
 .comment-text {
   width: 100%;

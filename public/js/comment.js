@@ -55,7 +55,7 @@ $(function(){
                 const newComment = {
                 content: textId.val().trim() ,
                 commenter: user[0].username,
-                PostId: commentId,
+                ImageId: commentId,
                 UserId: user[0].userId
                 }  
                 

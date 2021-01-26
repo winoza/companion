@@ -4,8 +4,8 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the comments
-  app.get("/api/comments", function(req, res) {
+  // GET route for getting all of the likes
+  app.get("/api/likes", function(req, res) {
     var query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
@@ -13,57 +13,57 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
-    db.Comment.findAll({
+    db.Like.findAll({
       where: query,
       include: ([db.User],[db.Image])
-    }).then(function(dbComment) {
-      res.json(dbComment);
+    }).then(function(dbLike) {
+      res.json(dbLike);
     });
   });
 
-  // Get route for retrieving a single Comment
-  app.get("/api/comments/:id", function(req, res) {
+  // Get route for retrieving a single Like
+  app.get("/api/likes/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, db.User and db.Post
-    db.Comment.findOne({
+    db.Like.findOne({
       where: {
         id: req.params.id
       },
       include: ([db.User],[db.Image])
-    }).then(function(dbComment) {
-      res.json(dbComment);
+    }).then(function(dbLike) {
+      res.json(dbLike);
     });
   });
 
   // POST route for saving a new post
-  app.post("/api/comments", function(req, res) {
-    db.Comment.create(req.body).then(function(dbComment) {
-      res.json(dbComment);
+  app.post("/api/likes", function(req, res) {
+    db.Like.create(req.body).then(function(dbLike) {
+      res.json(dbLike);
     });
   });
 
-  // DELETE route for deleting comments
-  app.delete("/api/comments/:id", function(req, res) {
-    db.Comment.destroy({
+  // DELETE route for deleting likes
+  app.delete("/api/likes/:id", function(req, res) {
+    db.Like.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbComment) {
-      res.json(dbComment);
+    }).then(function(dbLike) {
+      res.json(dbLike);
     });
   });
 
-  // PUT route for updating comments
-  app.put("/api/comments", function(req, res) {
-    db.Comment.update(
+  // PUT route for updating likes
+  app.put("/api/likes", function(req, res) {
+    db.Like.update(
       req.body,
       {
         where: {
           id: req.body.id
         }
-      }).then(function(dbComment) {
-      res.json(dbComment);
+      }).then(function(dbLike) {
+      res.json(dbLike);
     });
   });
 };
