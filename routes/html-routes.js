@@ -48,6 +48,10 @@ module.exports = function(app) {
           user: {
             userId: user.id,
             username: user.displayName,
+            profileImage: user.profileImage,
+            favorites: user.favorites,
+            location: user.location,
+            birthday: user.birthday,
             posts: user.Images
           }
         }
@@ -55,17 +59,27 @@ module.exports = function(app) {
       })
   })
   
+  //if the user is signed in they can access the page to edit their profile image
+  app.get("/profileimage", isAuthenticated, (req, res) => {
+    res.render("profileImage");
+  });
 
-  //app.post("/upload", upload.single("file"), uploadController.uploadFiles);
+  //if the user is signed in they can access the page to edit their profile details
+  app.get("/aboutme", isAuthenticated, (req, res) => {
+    res.render("profileDetails");
+  });
+
+  //if the user is signed in they can access the page to create a post
   app.get("/post", isAuthenticated, (req, res) => {
     res.render("post");
   });
 
+  //if the user is signed in they can access the not found page if they search for an unknown user
   app.get("/notfound", isAuthenticated, (req, res) => {
     var userPage = {
       user_Id: req.user.id
     }
-    console.log(userPage)
+
     res.render("notfound", userPage);
   });  
 };

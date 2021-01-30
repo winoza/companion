@@ -1,63 +1,70 @@
-
-  <div class="container">
-    
-    <div class = headerlogo>
-      <h1>
-        <img src="../img/CompanionsLogoFinal.png" alt="Logo" width="250">
-        <p>Social Media for Pet Lovers</p>
-      </h1>
-      </div>
-      
-    <div class="box">
-      <input type="checkbox" id="toggle" class="box__toggle" hidden>
-      <img src="https://images.unsplash.com/photo-1566847438217-76e82d383f84?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fHBldHN8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Picture by Autumn Studio" class="box__image">
-      <form class="form form--register" action="">
-        <h1 class="form__title">Sign up</h1>
-
-        <div class="form__helper">
-          <input type="text" name="user" id="new-user" placeholder="User" class="form__input" />
-          <label class="form__label" for="new-user">User</label>
-        </div>
-
-        <div class="form__helper">
-          <input type="email" name="email" id="email" placeholder="Email" class="form__input" />
-          <label class="form__label" for="email">Email</label>
-        </div>
-
-        <div class="form__helper">
-          <input type="password" name="password" id="new-user-password" placeholder="Password" class="form__input" />
-          <label class="form__label" for="new-user-password">Password</label>
-        </div>
-
-        <div class="form__helper">
-          <input type="password" name="password" id="confirm-password" Placeholder="Confirm password" class="form__input" />
-          <label class="form__label" for="confirm-password">Confirm password</label>
-        </div>
-
-        <button type="submit" class="form__button">Register</button>
-
-        <p class="form__text">Already have an account? <label for="toggle" class="form__link">Sign in!</label>
-      </form>
-
-      <form class="form form--login" action="">
-        <h1 class="form__title">Sign in</h1>
-
-        <div class="form__helper">
-          <input type="text" name="user" id="userEmail" placeholder="User" class="form__input" />
-          <label class="form__label" for="user">Email</label>
-        </div>
-
-        <div class="form__helper">
-          <input type="password" name="password" id="password" placeholder="Password" class="form__input" />
-          <label class="form__label" for="password">Password</label>
-        </div>
-
-        <button type="submit" class="form__button">Login</button>
-
-        <p class="form__text">Don't have an account? <label for="toggle" class="form__link">Sign up!</label>
-      </form>
-    </div>
+<div class="container">
+  
+  {{!-- Logo --}}
+  <div class="headerlogo">
+    <h1>
+      <img src="../img/CompanionsLogoFinal.png" alt="Logo" width="250">
+      <p>Social Media for Pet Lovers</p>
+    </h1>
   </div>
+    
+  {{!-- Sign-up and Sign-in Container --}}
+  <div class="box">
+    <input type="checkbox" id="toggle" class="box__toggle" hidden>
+    <img src="https://images.unsplash.com/photo-1566847438217-76e82d383f84?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fHBldHN8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Picture by Autumn Studio" class="box__image">
+    
+    {{!-- Registration form --}}
+    <form class="form form--register">
+      <h1 class="form__title">Sign up</h1>
+
+      <div class="form__helper">
+        <input type="text" name="user" id="new-user" placeholder="User" class="form__input" />
+        <label class="form__label" for="new-user">User</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="email" name="email" id="email" placeholder="Email" class="form__input" />
+        <label class="form__label" for="email">Email</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="new-user-password" placeholder="Password" class="form__input" />
+        <label class="form__label" for="new-user-password">Password</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="confirm-password" Placeholder="Confirm password" class="form__input" />
+        <label class="form__label" for="confirm-password">Confirm password</label>
+      </div>
+
+      <button type="submit" class="form__button">Register</button>
+
+      <p class="form__text">Already have an account? <label for="toggle" class="form__link">Sign in!</label>
+    {{!-- End Registration Form --}}
+    </form>
+
+    {{!-- Sign-in Form --}}
+    <form class="form form--login">
+      <h1 class="form__title">Sign in</h1>
+
+      <div class="form__helper">
+        <input type="text" name="user" id="userEmail" placeholder="User" class="form__input" />
+        <label class="form__label" for="user">Email</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="password" placeholder="Password" class="form__input" />
+        <label class="form__label" for="password">Password</label>
+      </div>
+
+      <button type="submit" class="form__button">Login</button>
+
+      <p class="form__text">Don't have an account? <label for="toggle" class="form__link">Sign up!</label>
+    {{!-- End Sign-in Form --}}  
+    </form>
+  {{!-- End Sign-up and Sign-in Container --}}
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>

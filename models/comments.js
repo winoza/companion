@@ -17,14 +17,16 @@ module.exports = function(sequelize, DataTypes) {
         Comment.belongsTo(models.Image, {
           foreignKey: {
             allowNull: false
-          }
+          },
+          onDelete: "CASCADE"
         });
         // We're saying that Comment should belong to the User who created it
         // A Comment can't be created without a User
         Comment.belongsTo(models.User, {
             foreignKey: {
               allowNull: false
-            }
+            },
+            onDelete: "CASCADE"
         });
       };
       return Comment
