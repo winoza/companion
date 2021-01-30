@@ -29,7 +29,7 @@ $(document).ready(() => {
       password: password
     })
       .then((req) => {
-        console.log(req)
+  
         const id = req.id
         window.location.replace(`/members/${id}`);
         // If there's an error, log the error

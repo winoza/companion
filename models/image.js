@@ -19,10 +19,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
     Image.hasMany(models.Comment, {
-      onDelete: "cascade"
+      onDelete: "CASCADE",
+      hooks: true
     })
     Image.hasMany(models.Like, {
-      onDelete: "cascade"
+      onDelete: "CASCADE",
+      hooks: true
     })
   };
   return Image;

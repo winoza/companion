@@ -33,7 +33,8 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/image-api-routes.js")(app)
 require("./routes/comment-api-routes.js")(app)
 require("./routes/like-api-routes.js")(app)
 
