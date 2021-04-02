@@ -1,33 +1,71 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        </div>
-    </div>
-</nav>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h2>Sign Up Form</h2>
-            <form class="signup">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="email-input" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password-input" placeholder="Password">
-                </div>
-                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only">Error:</span> <span class="msg"></span>
-                </div>
-                <button type="submit" class="btn btn-default">Sign Up</button>
-            </form>
-            <br />
-            <p>Or log in <a href="/login">here</a></p>
-        </div>
-    </div>
+  
+  {{!-- Logo --}}
+  <div class="headerlogo">
+    <h1>
+      <img src="../img/CompanionsLogoFinal.png" alt="Logo" width="250">
+      <p>Social Media for Pet Lovers</p>
+    </h1>
+  </div>
+    
+  {{!-- Sign-up and Sign-in Container --}}
+  <div class="box">
+    <input type="checkbox" id="toggle" class="box__toggle" hidden>
+    <img src="https://images.unsplash.com/photo-1566847438217-76e82d383f84?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fHBldHN8ZW58MHwyfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Picture by Autumn Studio" class="box__image">
+    
+    {{!-- Registration form --}}
+    <form class="form form--register">
+      <h1 class="form__title">Sign up</h1>
+
+      <div class="form__helper">
+        <input type="text" name="user" id="new-user" placeholder="User" class="form__input" />
+        <label class="form__label" for="new-user">User</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="email" name="email" id="email" placeholder="Email" class="form__input" />
+        <label class="form__label" for="email">Email</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="new-user-password" placeholder="Password" class="form__input" />
+        <label class="form__label" for="new-user-password">Password</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="confirm-password" Placeholder="Confirm password" class="form__input" />
+        <label class="form__label" for="confirm-password">Confirm password</label>
+      </div>
+
+      <button type="submit" class="form__button">Register</button>
+
+      <p class="form__text">Already have an account? <label for="toggle" class="form__link">Sign in!</label>
+    {{!-- End Registration Form --}}
+    </form>
+
+    {{!-- Sign-in Form --}}
+    <form class="form form--login">
+      <h1 class="form__title">Sign in</h1>
+
+      <div class="form__helper">
+        <input type="text" name="user" id="userEmail" placeholder="User" class="form__input" />
+        <label class="form__label" for="user">Email</label>
+      </div>
+
+      <div class="form__helper">
+        <input type="password" name="password" id="password" placeholder="Password" class="form__input" />
+        <label class="form__label" for="password">Password</label>
+      </div>
+
+      <button type="submit" class="form__button">Login</button>
+
+      <p class="form__text">Don't have an account? <label for="toggle" class="form__link">Sign up!</label>
+    {{!-- End Sign-in Form --}}  
+    </form>
+  {{!-- End Sign-up and Sign-in Container --}}
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/signup.js"></script>
