@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cd public && npm run build",
     "test": "npm run lint",
     "start": "node server.js",
     "lint": "eslint --quiet .",
