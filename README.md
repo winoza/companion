@@ -45,3 +45,7 @@ Deployed live application: https://companion-social-media.herokuapp.com/
 ## Demo
 
 [![x](https://img.youtube.com/vi/NmrVBgletuc/0.jpg)](https://www.youtube.com/watch?v=NmrVBgletuc)
+
+## License
+
+See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
