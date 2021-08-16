@@ -1,4 +1,4 @@
-const profileId = []
+const profileId = 4
 const imageBtn = $('#editProfile')
 const detailsBtn = $('#editDetails')
 const profileBtn = $('#profile-btn')
@@ -24,7 +24,7 @@ $(function(){
         event.preventDefault()
 
         const profileObj = {
-            id: profileId[0],
+            id: profileId,
             displayName: profileUser.val().trim(),
             favorites: profileFav.val().trim(),
             location: profileLoc.val().trim(),
@@ -32,12 +32,12 @@ $(function(){
         }
 
         $.ajax({
-            method: "PUT",
-            url: "/uploadProfile",
+            url: '/uploadProfile',
+            method: 'PUT',
             data: profileObj
         })
         .then(function(){
-            window.location.href = "/members/" + profileId[0]
+            window.location.href = "/members/" + profileId
         })
 
     } )
