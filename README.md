@@ -7,7 +7,7 @@ Within the past decade of social media, influencers have expanded and evolved fr
 
 If you are one of many that are tired of having to look at pictures of humans on your social network and want to enjoy looking at other furry friends as well as sharing your own, Companion may be the social media app for you!
 
-![Idea_Image](./assets/p2layoutidea.png)
+![home-page](./assets/companion-home.JPG)
 
 ## Technologies
 - Node
