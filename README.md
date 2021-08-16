@@ -1,9 +1,9 @@
 README Content
 
-# Companion
+# Companions
 
 ## Description
-Within the past decade of social media, influencers have expanded and evolved from fashion, photography, fitness, and food to pets in order to bring joy and laughter to the hearts of millions while showcasing their beloved fur babies. Inpsired by Instagram, Companion is a social media platform for pet lovers and influencers to create accounts for their pets and connect with other pet-loving friends.
+Within the past decade of social media, influencers have expanded and evolved from fashion, photography, fitness, and food to pets in order to bring joy and laughter to the hearts of millions while showcasing their beloved fur babies. Inpsired by Instagram, Companions is a social media platform for pet lovers and influencers to create accounts for their pets and connect with other pet-loving friends.
 
 If you are one of many who are tired of having to look at pictures of humans on your social network and want to enjoy looking at other furry friends as well as sharing your own, Companion may be the social media app for you!
 
