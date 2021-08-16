@@ -7,16 +7,12 @@ var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
-console.log("sssssssssssss start of code sssssssssssssssssssss");
+
 if (config.use_env_variable) {
-  console.log("xxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxx: " + config.use_env_variable);
    var sequelize = new Sequelize(process.env[config.use_env_variable]);
 
  } else {
-  console.log("qqqqqqqqqqqqqqqqqqqqqqq  qqqqqqqqqqqqqqqqqqqqqqqqqqq");
   var sequelize = new Sequelize(config.database, config.username, config.password, config, {host: '127.0.0.1', dialect:'mysql'});
-
- // var sequelize = new Sequelize('companion', 'root', 'chicken20', {host: '127.0.0.1', dialect:'mysql'});
 }
 
 fs
