@@ -9,7 +9,7 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 console.log("sssssssssssss start of code sssssssssssssssssssss");
 if (config.use_env_variable) {
-  console.log("xxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxx");
+  console.log("xxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxx: " + config.use_env_variable);
    var sequelize = new Sequelize(process.env[config.use_env_variable]);
 
  } else {
