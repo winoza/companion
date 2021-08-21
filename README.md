@@ -13,6 +13,7 @@ Deployed live application: https://companion-social-media.herokuapp.com/
 - [Features](#features)
 - [Future Development](#future-development)
 - [Demo](#demo)
+- [Contributors](#contributors)
 - [License Information](#license-information)
 
 ## Installation
@@ -49,6 +50,13 @@ Deployed live application: https://companion-social-media.herokuapp.com/
 ## Demo
 
 [![x](https://img.youtube.com/vi/NmrVBgletuc/0.jpg)](https://www.youtube.com/watch?v=NmrVBgletuc)
+
+## Contributors
+- Jessica Tax
+- Carly McVay
+- Alexander Camacho
+- Tria Thao
+- Joshua Ordaz
 
 ## License Information
 
